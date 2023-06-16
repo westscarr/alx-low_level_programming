@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Displays unique two-digit combinations
+/* Displays unique two-digit combinations *//
 
 int main(void)
 {

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function to display digits from 0 to 9
+/* Function to display digits from 0 to 9 */
 
 int main()
 {

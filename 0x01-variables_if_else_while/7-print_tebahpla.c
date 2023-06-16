@@ -1,7 +1,8 @@
 #include <stdio.h>
 
-// Function to print the reversed lowercase alphabet
-// and a newline character
+/*
+* Function to print the reversed lowercase alphabet and a newline character
+*/
 
 int main()
 {

@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 
-// Function to describe the number as a string
+/* Function to describe the number as a string */
 
 const char *describe_number(int n) {
     if (n > 0) return "is positive";

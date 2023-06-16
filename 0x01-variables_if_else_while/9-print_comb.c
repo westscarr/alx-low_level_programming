@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Functions to display 
+/* Functions to display */
 
 int main(void)
 {
