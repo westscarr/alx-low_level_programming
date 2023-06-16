@@ -1,20 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-/* Functions to display */
-
+/**
+ * main - prints the alphabet in lowercase,
+ * followed by a new line, except q and e
+ * Return: Aways 0 (Sucess)
+ */
 int main(void)
 {
-    char letter;
+char ch = 'a';
 
-    for (letter = 'a'; letter <= 'z'; letter++)
-    {
-        if (letter != 'e' && letter != 'q')
-        {
-            putchar(letter);
-        }
-    }
-    putchar('\n');
-    return (0);
+while (ch <= 'z')
+{
+if (ch != 'e' && ch != 'q')
+{
+putchar(ch);
+}
+ch++;
+}
+putchar('\n');
+return (0);
 }

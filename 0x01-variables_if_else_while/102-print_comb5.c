@@ -1,21 +1,33 @@
 #include <stdio.h>
 
-/* Displays loop of unique two-digit combinations */
-
+/**
+ * main - prints all possible combinations of two two-digit numbers
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    int num1, num2;
-    for (num1 = 0; num1 < 100; num1++)
- {
-        for (num2 = num1 + 1; num2 < 100; num2++)
-        {
-            printf("%02d %02d", num1, num2);
-            if (num1 != 98 || num2 != 99)
-            {
-                printf(", ");
-            }
-        }
-    }
-    putchar('\n');
-    return (0);
+int i, j;
+
+for (i = 0; i < 100; i++)
+{
+for (j = 0; j < 100; j++)
+{
+if (i < j)
+{
+putchar((i / 10) + 48);
+putchar((i % 10) + 48);
+putchar(' ');
+putchar((j / 10) + 48);
+putchar((j % 10) + 48);
+if (i != 98 || j != 99)
+{
+putchar(',');
+putchar(' ');
+}
+}
+
+}
+}
+putchar('\n');
+return (0);
 }

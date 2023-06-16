@@ -1,17 +1,18 @@
 #include <stdio.h>
 
-/*
-* Function to print the reversed lowercase alphabet and a newline character
-*/
-
-int main()
+/**
+ * main - prints the lowercase alphabet in reverse,
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
+int main(void)
 {
-    char letter;
+char ch;
 
-    for (letter = 'z'; letter >= 'a'; letter--)
-    {
-        putchar(letter);
-    }
-    putchar('\n');
-    return 0;
+for (ch = 'z'; ch >= 'a'; ch--)
+{
+putchar(ch);
+}
+putchar('\n');
+return (0);
 }

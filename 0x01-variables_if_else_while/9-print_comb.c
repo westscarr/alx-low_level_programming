@@ -1,17 +1,22 @@
 #include <stdio.h>
 
-/* Functions to display */
-
+/**
+ * main - prints all possible combinations of single-digit numbers
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-     for (int number = 48; number < 58; number++)
-     {
-         printf("%c", number);
-         if (number != 57)
-         {
-             printf(", ");
-         }
-     }
-     printf("\n");
-     return 0;
+int n;
+
+for (n = 48; n < 58; n++)
+{
+putchar(n);
+if (n != 57)
+{
+putchar(',');
+putchar(' ');
+}
+}
+putchar('\n');
+return (0);
 }

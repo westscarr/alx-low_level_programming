@@ -2,25 +2,23 @@
 #include <time.h>
 #include <stdio.h>
 
-/* Function to describe the number as a string */
+/**
+ * main - prints the last digit of the random
+ * number stored in the variable n
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+int n;
 
-const char *describe_number(int n) {
-    if (n > 0) return "is positive";
-    else if (n == 0) return "is zero";
-    else return "is negative";
-}
-
-int main(void) {
-    int n;
-
-    // Seed the random number generator with the current line 
-    srand(time(0));
-
-    // Generate a random number between -RAND_MAX/2 and RAND_MAX/2
-    n = rand() - RAND_MAX / 2;
-
-    // Print the number and its descriptions 
-    printf("%d %s\n", n, describe_number(n));
-
-    return 0;
+srand(time(0));
+n = rand() - RAND_MAX / 2;
+printf("Last digit of %d is %d ", n, n % 10);
+if (n % 10 > 5)
+printf("and is greater than 5\n");
+else if (n % 10 == 0)
+printf("and is 0\n");
+else if (n % 10 < 6 && n % 10 != 0)
+printf("and is less than 6 and not 0\n");
+return (0);
 }
