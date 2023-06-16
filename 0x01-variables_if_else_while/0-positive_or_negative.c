@@ -6,9 +6,11 @@
 const char *describe_number(int n) {
     if (n > 0) {
         return "is positive";
-    } else if (n == 0) {
+    }
+    else if (n == 0) {
         return "is zero";
-    } else {
+    }
+    else {
         return "is negative";
     }
 }
