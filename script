@@ -1,0 +1,341 @@
+#!/bin/bash
+
+cd /
+
+cd alx-low_level_programming
+mkdir 0x01-variables_if_else_while
+cd 0x01-variables_if_else_while
+
+cat << 'EOF' > README.md
+Project completed during Full Stack Software Engineering studies at Western Brothers. The objective is to learn about arithmetic operators, relational operators, boolean operators, comments, declaring variables, and loops in C language.
+Technologies
+Scripts written in Bash 4.3.11(1)
+C files are compiled using gcc 4.8.4
+C files are written in compliance with the C90 standard
+Tested on Ubuntu 14.04 LTS
+EOF
+
+cat << 'EOF' > 0-positive_or_negative.c
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+// Function to describe the number as a string
+
+const char *describe_number(int n) {
+    if (n > 0) return "is positive";
+    else if (n == 0) return "is zero";
+    else return "is negative";
+}
+
+int main(void) {
+    int n;
+    srand(time(0));
+    n = rand() - RAND_MAX / 2;
+    printf("%d %s\n", n, describe_number(n));
+    return 0;
+}
+EOF
+
+gcc 0-positive_or_negative.c -o western
+
+cat << 'EOF' > 1-last_digit.c
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+// Function to describe the number as a string
+
+const char *describe_number(int n) {
+    if (n > 0) return "is positive";
+    else if (n == 0) return "is zero";
+    else return "is negative";
+}
+
+int main(void) {
+    int n;
+
+    // Seed the random number generator with the current line 
+    srand(time(0));
+
+    // Generate a random number between -RAND_MAX/2 and RAND_MAX/2
+    n = rand() - RAND_MAX / 2;
+
+    // Print the number and its descriptions 
+    printf("%d %s\n", n, describe_number(n));
+
+    return 0;
+}
+EOF
+
+gcc 1-last_digit.c -o western
+
+cat << 'EOF' > 2-print_alphabet.c
+#include <stdio.h>
+
+// Function to display the alphabet
+
+int main(void)
+{
+    for (char c = 'a'; c <= 'z'; c++)
+    { 
+		putchar(c);
+	}
+	putchar('\n');
+	return 0;
+}
+EOF
+
+gcc 2-print_alphabet.c -o western
+
+cat << 'EOF' > 3-print_alphabets.c
+#include <stdio.h>
+
+// Function to display the alphabet
+
+int main(void)
+{
+    for (char c = 'a'; c <= 'z'; c++)
+    { 
+		putchar(c);
+	}
+	for (char c = 'A'; c <= 'Z'; c++)
+	{
+	    putchar(c);
+	}
+	return (0);
+}
+EOF
+
+gcc 3-print_alphabets.c -o western
+
+cat << 'EOF' > 4-print_alphabt.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Functions to display 
+
+int main(void)
+{
+    char letter;
+
+    for (letter = 'a'; letter <= 'z'; letter++)
+    {
+        if (letter != 'e' && letter != 'q')
+        {
+            putchar(letter);
+        }
+    }
+    putchar('\n');
+    return (0);
+}
+EOF
+
+gcc 4-print_alphabt.c -o western
+
+cat << 'EOF' > 5-print_numbers.c
+#include <stdio.h>
+
+// Function to display numbers from 0 to 9
+
+int main()
+{
+    int num;
+
+    for (num = 0; num < 10; num++)
+    {
+        printf("%d", num);
+    }
+    printf("\n");
+    return 0;
+}
+EOF
+
+gcc 5-print_numbers.c -o western
+
+cat << 'EOF' > 6-print_numberz.c
+#include <stdio.h>
+
+// Function to display digits from 0 to 9
+
+int main()
+{
+    int num;
+
+    for (num = '0'; num <= '9'; num++)
+    {
+        putchar(num);
+    }
+    putchar('\n');
+    return 0;
+}
+EOF
+
+gcc 6-print_numberz.c -o western
+
+cat << 'EOF' > 7-print_tebahpla.c
+#include <stdio.h>
+
+// Function to print the reversed lowercase alphabet
+// and a newline character
+
+int main()
+{
+    char letter;
+
+    for (letter = 'z'; letter >= 'a'; letter--)
+    {
+        putchar(letter);
+    }
+    putchar('\n');
+    return 0;
+}
+EOF
+
+gcc 7-print_tebahpla.c -o western
+
+cat << 'EOF' > 8-print_base16.c
+#include <stdio.h>
+
+// Functions to display 
+
+int main(void)
+{
+	int i;
+
+	for (i = 48; i < 58; i++)
+	{
+		putchar(i);
+	}
+	for (i = 97; i < 103; i++)
+	{
+		putchar(i);
+	}
+	putchar('\n');
+	return (0);
+}
+EOF
+
+gcc 8-print_base16.c -o western
+
+cat << 'EOF' > 9-print_comb.c
+#include <stdio.h>
+
+// Functions to display 
+
+int main(void)
+{
+     for (int number = 48; number < 58; number++)
+     {
+         printf("%c", number);
+         if (number != 57)
+         {
+             printf(", ");
+         }
+     }
+     printf("\n");
+     return 0;
+}
+EOF
+
+gcc 9-print_comb.c -o western
+
+cat << 'EOF' > 100-print_comb3.c
+#include <stdio.h>
+
+// Displays unique two-digit combinations
+
+int main(void)
+{
+    int first_digit, second_digit;
+
+    for (first_digit = 48; first_digit <= 56; first_digit++)
+    {
+        for (second_digit = 49; second_digit <= 57; second_digit++)
+        {
+            if (second_digit > first_digit)
+            {
+                putchar(first_digit);
+                putchar(second_digit);
+                if (first_digit != 56 || second_digit != 57)
+                {
+                    putchar(',');
+                    putchar(' ');
+                }
+            }
+        }
+    }
+    putchar('\n');
+    return (0);
+}
+EOF
+
+gcc 100-print_comb3.c -o western
+
+cat << 'EOF' > 101-print_comb4.c
+#include <stdio.h>
+
+// Functions to display 
+
+int main(void)
+{
+    int a, b, c;
+
+    for (a = 48; a < 58; a++)
+    {
+        for (b = a + 1; b < 58; b++)
+        {
+            for (c = b + 1; c < 58; c++)
+            {
+                putchar(a);
+                putchar(b);
+                putchar(c);
+                if (a != 55 || b != 56)
+                {
+                    putchar(',');
+                    putchar(' ');
+                }
+            }
+        }
+    }
+    putchar('\n');
+    return (0);
+}
+EOF
+
+gcc 101-print_comb4.c -o western
+
+cat << 'EOF' > 102-print_comb5.c
+#include <stdio.h>
+
+// Displays loop of unique two-digit combinations
+
+int main(void)
+{
+    int num1, num2;
+    for (num1 = 0; num1 < 100; num1++)
+ {
+        for (num2 = num1 + 1; num2 < 100; num2++)
+        {
+            printf("%02d %02d", num1, num2);
+            if (num1 != 98 || num2 != 99)
+            {
+                printf(", ");
+            }
+        }
+    }
+    putchar('\n');
+    return (0);
+}
+EOF
+
+gcc 102-print_comb5.c -o western
+
+chmod +x *
+chmod -x README.md
+
+git add .
+git commit -m "CSS"
+git push
+
